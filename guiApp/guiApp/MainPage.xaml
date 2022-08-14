@@ -28,7 +28,7 @@
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
                 <TextBlock Text="Input:" Grid.Column="0" Grid.Row="0"/>
-                <ComboBox x:Name="cmbInput" HorizontalAlignment="Stretch" Grid.Column="1" Grid.Row="0" ItemsSource="{x:Bind Inputs}" DisplayMemberPath="Name"/>
+                <ComboBox x:Name="cmbInput" HorizontalAlignment="Stretch" Grid.Column="1" Grid.Row="0" ItemsSource="{x:Bind Inputs}"/>
             </Grid>
             <TextBlock x:Name="txtOutput" Grid.Column="0" Grid.Row="1" Text="Output will appear here"/>
             <Grid Grid.Row="0" Grid.Column="1">
@@ -37,10 +37,10 @@
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
                 <TextBlock Text="Solution creator:" Grid.Column="0"/>
-                <TextBlock x:Name="txtCreator" Text="N/A" Grid.Column="1"/>
+                <TextBlock Text="{Binding SelectedItem.Creator, ElementName=cmbSolutions}" Grid.Column="1"/>
             </Grid>
-            <ComboBox x:Name="cmbSolutions" Grid.Column="1" Grid.Row="1" HorizontalAlignment="Stretch" SelectionChanged="SolutionChange" ItemsSource="{x:Bind solutions}" DisplayMemberPath="GetName"/>
-            <Button Content="Solve" Grid.Column="1" Grid.Row="2" HorizontalAlignment="Stretch"/>
+            <ComboBox x:Name="cmbSolutions" Grid.Column="1" Grid.Row="1" HorizontalAlignment="Stretch" ItemsSource="{x:Bind solutions}" DisplayMemberPath="Name"/>
+            <Button Content="Solve" Grid.Column="1" Grid.Row="2" HorizontalAlignment="Stretch" Click="Button_Click"/>
         </Grid>
     </Viewbox>
 </Page>
