@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
@@ -22,9 +23,27 @@ namespace guiApp
     /// </summary>
     public sealed partial class MainPage : Page
     {
+        ObservableCollection<structs.SolutionBase> solutions = new ObservableCollection<structs.SolutionBase>();
+        ObservableCollection<InputContainer> Inputs = new ObservableCollection<InputContainer>();
         public MainPage()
         {
+            solutions.Add(new Challenge_Solutions.Solution1CB());
             this.InitializeComponent();
         }
+
+        private void SolutionChange(object sender, SelectionChangedEventArgs e)
+        {
+            
+        }
+    }
+    public class InputContainer
+    {
+        public string Name;
+        public string Input;
+    }
+    public class SolutionContainer
+    {
+        public string Name;
+
     }
 }

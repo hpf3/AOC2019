@@ -6,9 +6,21 @@ using System.Threading.Tasks;
 
 namespace guiApp.structs
 {
-    public interface SolutionBase
+    public abstract class SolutionBase
     {
-        string GetCreator();//return your name
-         string Solve(string input);//input will be raw text with /n and all
+        /// <summary>
+        /// return solution name
+        /// </summary>
+        public abstract string Name { get; }
+        /// <summary>
+        /// return your name
+        /// </summary>
+        public abstract string Creator { get; }
+        /// <summary>
+        /// input will be raw text with /n and all
+        /// </summary>
+        /// <param name="input">raw challenge input</param>
+        /// <returns>solution output</returns>
+        public abstract string Solve(string input);
     }
 }
