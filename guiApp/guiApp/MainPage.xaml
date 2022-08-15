@@ -41,6 +41,14 @@
             </Grid>
             <ComboBox x:Name="cmbSolutions" Grid.Column="1" Grid.Row="1" HorizontalAlignment="Stretch" ItemsSource="{x:Bind solutions}" DisplayMemberPath="Name"/>
             <Button Content="Solve" Grid.Column="1" Grid.Row="2" HorizontalAlignment="Stretch" Click="Button_Click"/>
+            <Grid Grid.Row="2" Grid.Column="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <TextBlock Text="Execution Time(time below 0.001 has high variance):" Grid.Column="0"/>
+                <TextBlock x:Name="txtTime" Text="Press solve to time" Grid.Column="1"/>
+            </Grid>
         </Grid>
     </Viewbox>
 </Page>

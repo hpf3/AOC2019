@@ -66,6 +66,8 @@ namespace guiApp
         {
             if (cmbInput.SelectedIndex == -1)return;
             if (cmbSolutions.SelectedIndex == -1) return;
+            System.Diagnostics.Stopwatch sw = new System.Diagnostics.Stopwatch();
+            sw.Start();
             try
             {
                 txtOutput.Text = ((structs.SolutionBase)cmbSolutions.SelectedItem).Solve(((InputContainer)cmbInput.SelectedItem).Input);
@@ -74,7 +76,9 @@ namespace guiApp
             {
                 txtOutput.Text = err.Message;
             }
-            
+            sw.Stop();
+            txtTime.Text = sw.Elapsed.ToString();
+            sw.Reset();
         }
     }
     public class InputContainer
