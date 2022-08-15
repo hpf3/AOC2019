@@ -14,7 +14,15 @@ namespace guiApp.Challenge_Solutions
 
         public override string Solve(string input)
         {
-            throw new NotImplementedException();
+            int total = 0;
+            foreach (var item in input.Split("\n"))//split the string on each line, and process each one
+            {
+                double value = double.Parse(item);//convert the string to double instead of int, since double allows decimals and we are doing division
+                total += (int)(Math.Floor(value / 3) - 2);//after the required math we need to force the double->int conversion since int holds less data than double
+            }
+
+
+            return total.ToString();//finaly return the total after processing
         }
     }
 }
