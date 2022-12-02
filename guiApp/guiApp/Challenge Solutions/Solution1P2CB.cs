@@ -14,21 +14,35 @@ namespace guiApp.Challenge_Solutions
 
         public override string Solve(string input)
         {
-            int total = 0;
-            foreach (var item in input.Split("\n"))//split the string on each line, and process each one
+            int highest1 = 0;
+            int highest2 = 0;
+            int highest3 = 0;
+            foreach (var elf in input.Split("\n\n"))//split the string on each paragraph, and process each one
             {
-                double moduleFuel = 0;
-                double current = double.Parse(item);
-                while (current >= 9)
+                int ElfCalories = 0;
+                foreach (var ration in elf.Split("\n"))//split paragraphs into lines
                 {
-                    current =(Math.Floor(current / 3) - 2);
-                    moduleFuel += current;
+                    ElfCalories += int.Parse(ration);
                 }
-                total+=(int)moduleFuel;
+                if (ElfCalories > highest1)
+                {
+                    highest3 = highest2;
+                    highest2 = highest1;
+                    highest1 = ElfCalories;
+                }
+                else if (ElfCalories > highest2)
+                {
+                    highest3 = highest2;
+                    highest2 = ElfCalories;
+                }
+                else if (ElfCalories > highest3)
+                {
+                    highest3 = ElfCalories;
+                }
             }
 
 
-            return total.ToString();//finaly return the total after processing
+            return (highest1+ highest2+ highest3).ToString();//finaly return the highest after processing
         }
     }
 }

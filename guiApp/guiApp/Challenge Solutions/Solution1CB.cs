@@ -14,15 +14,22 @@ namespace guiApp.Challenge_Solutions
 
         public override string Solve(string input)
         {
-            int total = 0;
-            foreach (var item in input.Split("\n"))//split the string on each line, and process each one
+            int highest = 0;
+            foreach (var elf in input.Split("\n\n"))//split the string on each paragraph, and process each one
             {
-                double value = double.Parse(item);//convert the string to double instead of int, since double allows decimals and we are doing division
-                total += (int)(Math.Floor(value / 3) - 2);//after the required math we need to force the double->int conversion since int holds less data than double
+                int ElfCalories = 0;
+                foreach (var ration in elf.Split("\n"))//split paragraphs into lines
+                {
+                    ElfCalories+= int.Parse(ration);
+                }
+                if (ElfCalories>highest)
+                {
+                    highest = ElfCalories;
+                }
             }
 
 
-            return total.ToString();//finaly return the total after processing
+            return highest.ToString();//finaly return the highest after processing
         }
     }
 }

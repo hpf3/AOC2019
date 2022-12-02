@@ -7,7 +7,7 @@
   IgnorableNamespaces="uap mp">
 
   <Identity
-    Name="92f8a2ad-ba2f-44f1-889a-5cae4ae6bf93"
+    Name="CBDEVAPP-AOC"
     Publisher="CN=redco"
     Version="1.0.0.0" />
 
@@ -42,8 +42,4 @@
       </uap:VisualElements>
     </Application>
   </Applications>
-
-  <Capabilities>
-    <Capability Name="internetClient" />
-  </Capabilities>
 </Package>
