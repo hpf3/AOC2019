@@ -122,6 +122,7 @@
     <Compile Include="Challenge Solutions\Solution1CB.cs" />
     <Compile Include="Challenge Solutions\Solution1P2CB.cs" />
     <Compile Include="Challenge Solutions\Solution2CB.cs" />
+    <Compile Include="Challenge Solutions\Solution2P2CB.cs" />
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
@@ -145,6 +146,7 @@
     <Content Include="Challenge Input\C2TestInput.txt" />
     <Content Include="Challenge messages\C1P2.txt" />
     <Content Include="Challenge messages\C2.txt" />
+    <Content Include="Challenge messages\C2P2.txt" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LockScreenLogo.scale-200.png" />
     <Content Include="Assets\SplashScreen.scale-200.png" />

@@ -80,6 +80,20 @@ namespace guiApp
             txtTime.Text = sw.Elapsed.ToString();
             sw.Reset();
         }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            if (cmbInput.SelectedIndex == -1) return;
+            if (cmbSolutions.SelectedIndex == -1) return;
+            try
+            {
+                ((structs.SolutionBase)cmbSolutions.SelectedItem).Test(((InputContainer)cmbInput.SelectedItem).Input);
+            }
+            catch (Exception err)
+            {
+                txtOutput.Text = err.Message;
+            }
+        }
     }
     public class InputContainer
     {

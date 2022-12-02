@@ -22,5 +22,14 @@ namespace guiApp.structs
         /// <param name="input">raw challenge input</param>
         /// <returns>solution output</returns>
         public abstract string Solve(string input);
+
+        /// <summary>
+        /// Allows solution to perform a test function (like calculating a dictionary), any output will be handled by the solution.
+        /// </summary>
+        /// <param name="input">raw challenge input</param>
+        public virtual void Test(string input)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
