@@ -43,7 +43,10 @@ namespace guiApp
             {
                 if (item.Namespace == typeof(Challenge_Solutions.Solution1CB).Namespace)
                 {
-                    solutions.Add((structs.SolutionBase)(item.AsType().GetConstructor(new Type[] { }).Invoke(new object[] { })));
+                    if (!item.FullName.Contains("DisplayClass"))
+                    {
+                        solutions.Add((structs.SolutionBase)(item.AsType().GetConstructor(new Type[] { }).Invoke(new object[] { })));
+                    }
                 }
             }
         }
